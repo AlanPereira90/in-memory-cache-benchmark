@@ -3,6 +3,8 @@ import { CONFIG } from "../infra/env";
 
 export namespace Query {
   export const execute = async () => {
-    await pgPool.query(CONFIG.EXECUTION_QUERY);
+    return setTimeout(async () => {
+      return (await pgPool.query(CONFIG.EXECUTION_QUERY)).rows[0];
+    }, 1000);
   };
 }

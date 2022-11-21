@@ -21,7 +21,6 @@ export const POSTGRES = {
 };
 
 export const CONFIG = {
-  EXECUTION_QUERY: process.env.EXECUTION_QUERY || requiredEnvVar("EXECUTION_QUERY"),
-  EXECUTION_TIMES: Number(process.env.EXECUTION_TIMES || 1000),
+  EXECUTION_QUERY: process.env.EXECUTION_QUERY || "SELECT NOW()",
   CACHE_AGE: Number(process.env.CACHE_AGE),
 };
